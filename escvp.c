@@ -253,7 +253,7 @@ error:
   return status;
 }
 
-static int escvp_port_remove(struct usb_serial_port *port)
+static void escvp_port_remove(struct usb_serial_port *port)
 {
   struct escvp_port *vport;
   vport = escvp_get_port_private(port);
@@ -263,7 +263,6 @@ static int escvp_port_remove(struct usb_serial_port *port)
   kfree(vport->ctrl_buf);
   kfree(vport->dr);
   kfree(vport);
-  return 0;
 }
 #if LINUX_VERSION_CODE < KERNEL_VERSION(3,5,0) 
 static struct usb_driver escvp_driver = {
