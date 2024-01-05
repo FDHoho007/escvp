@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ -e /sys/module/usbserial/drivers/usb:escvp ]; then
+if [ -e /sys/module/usbcore/drivers/usb:escvp ]; then
   echo "vcom module was loaded, unload now.."
   /sbin/rmmod escvp
 fi
